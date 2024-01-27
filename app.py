@@ -26,7 +26,7 @@ to pick a specific hour and look at how the charts change.
 )
 
 
-@st.cache(persist=True)
+@st.cache_data(persist=True)
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     data.rename(lambda x: str(x).lower(), axis="columns", inplace=True)
